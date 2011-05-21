@@ -1,0 +1,24 @@
+html,body {
+	margin: 0;
+	padding: 0;
+	background-color: #eee;
+	font-family: 'Liberation Sans', arial, serif;
+}
+
+@page {
+	margin: 0;
+	padding: 0;
+}
+
+#input1 {
+	background-color: white;
+	
+	margin: 0 auto;
+	display: block;
+
+	padding: 1in;
+}
+
+#input1 h1 {
+	text-align: center;
+}

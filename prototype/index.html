@@ -2,45 +2,46 @@
 
 <head>
 <link href='http://fonts.googleapis.com/css?family=Tinos' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cardo' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Monofett' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<link rel="stylesheet"
+   type="text/css"
+   media="print" href="print.css" />
 
 <title>Open Web Document Editor.</title>
 
 <script type="text/javascript">
-
+if (navigator.userAgent.indexOf("Firefox")!=-1)
+	alert("Whoa! Firefox's printing is kinda meh. Try using Chrome or Opera. Sorry!");
 </script>
 
-<style type="text/css">
-@media print {
+<style type="text/css" media=screen>
 html,body {
 	margin: 0;
 	padding: 0;
 	background-color: #eee;
-}
-
-@page {
-	margin: 0;
-	padding: 0;
+	font-family: 'Liberation Sans', arial, serif;
 }
 
 #input1 {
-	background-color: white;	
-	
-	border: 1px solid black;
-	resize: none;
-	width: 6.5in;
-	height: 9in;
-	
+	background-color: white;
+
 	margin: 0 auto;
 	display: block;
 
 	padding: 1in;
+		
+	font-size: 1em;
 	
-	font-family: 'Tinos', arial, serif;
+	width: 6.5in;
+	height: 9in;
 }
 
 #input1 h1 {
 	text-align: center;
-}
 }
 </style>
 
@@ -49,10 +50,25 @@ html,body {
 <body>
 <div id='input1' contentEditable=true>
 
-<h1>A heading...</h1>
-<p>This is just a simple paragraph. Once styled, it would look really neat! Now, it's time for some filler text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet eros quam, vel sagittis lorem. Sed egestas diam vel diam feugiat eu rhoncus neque convallis. Proin tristique tristique enim, ac auctor odio convallis at. Vestibulum quis lacus urna, sed facilisis eros. Phasellus euismod suscipit nisi nec cursus. Fusce sagittis lorem quis risus molestie dapibus. Curabitur felis dolor, faucibus et vestibulum a, tincidunt at ipsum. Nulla lobortis, ipsum id fringilla condimentum, dui odio convallis lorem, ac ultrices ante est eu mauris.</p>	
+<h1>A heading... asdf</h1>
+<p>This is just a simple paragraph. Once styled, it would look really 
+neat! Now, it's time for some filler text. Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit. Cras sit amet eros quam, vel sagittis 
+lorem. Sed egestas diam vel diam feugiat eu rhoncus neque convallis. 
+Proin tristique tristique enim, ac auctor odio convallis at. Vestibulum 
+quis lacus urna, sed facilisis eros. Phasellus euismod suscipit nisi nec 
+cursus. Fusce sagittis lorem quis risus molestie dapibus. Curabitur 
+felis dolor, faucibus et vestibulum a, tincidunt at ipsum. Nulla 
+lobortis, ipsum id fringilla condimentum, dui odio convallis lorem, ac 
+ultrices ante est eu mauris.</p>	
 
-<p>Nam est tellus, porttitor eget rhoncus ornare, congue vel eros. Phasellus hendrerit tempor quam vel consequat. Praesent malesuada ullamcorper risus, nec bibendum est porta quis. Aliquam erat volutpat. Quisque porttitor purus eget justo pulvinar non consectetur nisi convallis. Suspendisse potenti.</p>
+<p>Nam est tellus, porttitor eget rhoncus ornare, congue vel eros. 
+Phasellus hendrerit tempor quam vel consequat. Praesent malesuada 
+ullamcorper risus, nec bibendum est porta quis. Aliquam erat volutpat. 
+Quisque porttitor purus eget justo pulvinar non consectetur nisi 
+convallis. Suspendisse potenti.</p>
+
+<p>Do equations work? $$\int_0^1 f(x) dx = \frac11$$</p>
 </div>
 </body>
 
