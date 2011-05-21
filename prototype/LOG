@@ -1,0 +1,6 @@
+xhtmltopdf is an amazing tool. The PDF in this folder is just a sample output.
+
+We'll have to use it to create PDFs server-side. This is required for browsers
+other than Google Chrome / Chromium, since they don't like @page.
+
+--
