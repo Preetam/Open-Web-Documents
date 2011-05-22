@@ -1,7 +1,19 @@
 <html>
 
 <head>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: [] }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js">
 </script>
 <!--<script type="text/javascript" src="/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>-->
 
@@ -12,6 +24,8 @@
 
 <script type="text/javascript">
 var latexEntered = 0;
+var latexEnabled = 1;
+var contentStore = "";
 
 if (navigator.userAgent.indexOf("Firefox")!=-1)
 	alert("Whoa! Firefox's printing is kinda meh. Try using Chrome or Opera. Sorry!");
@@ -33,22 +47,45 @@ function keyinput(e) {
 		e.preventDefault();
 		insertHtmlAtCursor("	");
 	}
+	
+	contentStore = document.getElementById('input1').innerHTML;
+}
+
+function toggleLatex() {
+	if(latexEnabled) {
+		latexEnabled = 0;
+		document.getElementById('input1').innerHTML = contentStore;
+	}
+	else {
+		latexEnabled = 1;
+		window.setTimeout(runJax, 500);
+	}
 }
 </script>
 
 </head>
 
-<body>
+<body onload="contentStore = document.getElementById('input1').innerHTML;">
+<!--<div id="topButtons"><button onclick="toggleLatex()">Toggle Latex</button></div>-->
 <div id='input1' contentEditable=true onkeydown='keyinput(event)'>
+<div id="header">
+Preetam Jinka
+<br>
+Anish Tondwalkar
+</div>
+<h1>Open Web Documents</h1>
+<p>	Doesn't this look a lot like Google Docs? That's because this is a Google Docs replacement. Welcome to <em>Open Web Documents</em>. OWD is a 100% open source document editor written in HTML, CSS, and Javascript. This editor is <em>extremely</em> lightweight; just check out the source! If you would like to contribute, visit Github.</p>
 
-<h1>A heading... asdf</h1>
-<p>This is just a simple paragraph. Once styled, it would look really neat! Now, it's time for some filler text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet eros quam, vel sagittis lorem. Sed egestas diam vel diam feugiat eu rhoncus neque convallis. Proin tristique tristique enim, ac auctor odio convallis at. Vestibulum quis lacus urna, sed facilisis eros. Phasellus euismod suscipit nisi nec cursus. Fusce sagittis lorem quis risus molestie dapibus. Curabitur felis dolor, faucibus et vestibulum a, tincidunt at ipsum. Nulla lobortis, ipsum id fringilla condimentum, dui odio convallis lorem, ac ultrices ante est eu mauris.</p>
+Here's a list of benefits:
+<ul>
+	<li>100% flexible HTML</li>
+	<li>Open source format</li>
+	<li>Web fonts</li>
+</ul>
 
-<p>Nam est tellus, porttitor eget rhoncus ornare, congue vel eros. Phasellus hendrerit tempor quam vel consequat. Praesent malesuada ullamcorper risus, nec bibendum est porta quis. Aliquam erat volutpat. Quisque porttitor purus eget justo pulvinar on consectetur nisi convallis. Suspendisse potenti.</p>
-
-<p>Do equations work?</p> 
+<p>Do equations work? Yep. Here's the Biot-Savart law for the physics fans:</p> 
 $$ d{\bf{\vec B}} = \frac{{\mu _0 }}{{4\pi }}\frac{{Id\ell \times {\bf{\hat r}}}}{{r^2 }} $$
-<p>&nbsp;</p>
+<p>The <img style="height: 15px;" src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/92/LaTeX_logo.svg/200px-LaTeX_logo.svg.png" /> content is rendered with MathJax.</p>
 
 </div>
 </body>
