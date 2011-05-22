@@ -1,0 +1,151 @@
+<html>
+
+<head>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!--<script type="text/javascript" src="/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>-->
+
+<link rel="stylesheet"
+   type="text/css"
+   media="print" href="print.css" />
+
+<title>Open Web Document Editor.</title>
+
+<style type="text/css" media=screen>
+html,body {
+	margin: 0;
+	padding: 0;
+	background-color: #eee;
+	font-family: serif;
+}
+
+#input1 {
+	background-color: white;
+
+	margin: 0 auto;
+	display: block;
+
+	padding: 1in;
+		
+	font-size: 1em;
+	
+	width: 6.5in;
+	min-height: 9in;
+	
+	background-image: url('1px.png');
+	background-repeat: repeat-x;
+	background-position: 0 11in;
+}
+
+#input1 h1 {
+	text-align: center;
+}
+
+.MathJax {
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -o-user-select: none;
+   user-select: none;
+}
+</style>
+
+<script type="text/javascript">
+// FROM http://alexking.org/blog/2003/06/02/inserting-at-the-cursor-using-javascript
+// ======================================
+function insertAtCursor(myField, myValue) {
+
+  //IE support
+
+  if (document.selection) {
+
+    myField.focus();
+
+    sel = document.selection.createRange();
+
+    sel.text = myValue;
+
+  }
+
+  //MOZILLA/NETSCAPE support
+
+  else if (myField.selectionStart || myField.selectionStart == '0') {
+
+    var startPos = myField.selectionStart;
+
+    var endPos = myField.selectionEnd;
+
+    myField.value = myField.value.substring(0, startPos)
+
+                  + myValue
+
+                  + myField.value.substring(endPos, myField.value.length);
+
+  } else {
+
+    myField.value += myValue;
+
+  }
+
+}
+// ======================================
+
+var latexEntered = 0;
+
+if (navigator.userAgent.indexOf("Firefox")!=-1)
+	alert("Whoa! Firefox's printing is kinda meh. Try using Chrome or Opera. Sorry!");
+	
+function runJax() {
+	MathJax.Hub.Queue(["Typeset",MathJax.Hub,"input1"]);
+}
+
+function keyinput(e) {
+	if(e.keyCode == 52 && e.shiftKey) {
+		if(latexEntered < 3) latexEntered++;
+		
+		else {
+			//window.setTimeout(runJax, 500);
+			latexEntered = -1;
+		}
+	}
+	else if(e.keyCode == 13) {
+		if(latexEntered == -1) {
+			window.setTimeout(runJax, 500);
+			latexEntered = 0;
+		}
+	}
+	
+	if(e.keyCode == 9)
+		insertAtCursor(document.getElementById('input1'), "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+}
+</script>
+
+</head>
+
+<body>
+<div id='input1' contentEditable=true onkeydown='keyinput(event)'>
+
+<h1>A heading... asdf</h1>
+<p>This is just a simple paragraph. Once styled, it would look really 
+neat! Now, it's time for some filler text. Lorem ipsum dolor sit amet, 
+consectetur adipiscing elit. Cras sit amet eros quam, vel sagittis 
+lorem. Sed egestas diam vel diam feugiat eu rhoncus neque convallis. 
+Proin tristique tristique enim, ac auctor odio convallis at. Vestibulum 
+quis lacus urna, sed facilisis eros. Phasellus euismod suscipit nisi nec 
+cursus. Fusce sagittis lorem quis risus molestie dapibus. Curabitur 
+felis dolor, faucibus et vestibulum a, tincidunt at ipsum. Nulla 
+lobortis, ipsum id fringilla condimentum, dui odio convallis lorem, ac 
+ultrices ante est eu mauris.</p>	
+
+<p>Nam est tellus, porttitor eget rhoncus ornare, congue vel eros. 
+Phasellus hendrerit tempor quam vel consequat. Praesent malesuada 
+ullamcorper risus, nec bibendum est porta quis. Aliquam erat volutpat. 
+Quisque porttitor purus eget justo pulvinar non consectetur nisi 
+convallis. Suspendisse potenti.</p>
+
+<p>Do equations work? $$\int_0^1 f(x) dx = \frac11$$</p>
+<p>&nbsp;</p>
+</div>
+</body>
+
+</html>
