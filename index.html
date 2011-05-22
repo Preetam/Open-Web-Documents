@@ -61,12 +61,27 @@ function toggleLatex() {
 		window.setTimeout(runJax, 500);
 	}
 }
+
+function enclose(tag) {
+	var sel, range;
+	sel = window.getSelection();
+	html="<"+tag+">"+sel+"</"+tag+">";
+	range = sel.getRangeAt(0);
+	range.deleteContents();
+	range.insertNode(range.createContextualFragment(html));
+}
+
 </script>
 
 </head>
 
 <body onload="contentStore = document.getElementById('input1').innerHTML;">
-<div id="leftbar"><button onclick="toggleLatex()">Undo Latex</button></div>
+<div id="leftbar">
+<button onclick="toggleLatex()">Undo Latex</button>
+<button onclick="enclose('b')">Bold</button>
+<button onclick="enclose('u')">Underline</button>
+<button onclick="enclose('i')">Italics</button>
+</div>
 <div id='input1' contentEditable=true onkeydown='keyinput(event)'>
 <div id="header">
 Preetam Jinka
