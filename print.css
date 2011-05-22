@@ -32,6 +32,10 @@ html,body {
 	clear: both;
 }
 
+#leftbar {
+	display:none;
+}
+
 .MathJax {
 	-moz-user-select: -moz-none;
 	-khtml-user-select: none;

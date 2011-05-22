@@ -1,7 +1,7 @@
 html,body {
 	margin: 0;
 	padding: 0;
-	background-color: #eee;
+	background-color: #bbb;
 	font-family: serif;
 }
  
@@ -30,6 +30,12 @@ html,body {
 #input1 h1 {
 	text-align: center;
 	clear: both;
+}
+
+#leftbar {
+	position:fixed;
+	left:0;
+	top:0;
 }
  
 .MathJax {

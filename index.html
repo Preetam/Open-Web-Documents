@@ -66,7 +66,7 @@ function toggleLatex() {
 </head>
 
 <body onload="contentStore = document.getElementById('input1').innerHTML;">
-<!--<div id="topButtons"><button onclick="toggleLatex()">Toggle Latex</button></div>-->
+<div id="leftbar"><button onclick="toggleLatex()">Undo Latex</button></div>
 <div id='input1' contentEditable=true onkeydown='keyinput(event)'>
 <div id="header">
 Preetam Jinka
@@ -86,7 +86,7 @@ Here's a list of benefits:
 <p>Do equations work? Yep. Here's the Biot-Savart law for the physics fans:</p> 
 $$ d{\bf{\vec B}} = \frac{{\mu _0 }}{{4\pi }}\frac{{Id\ell \times {\bf{\hat r}}}}{{r^2 }} $$
 <p>The $\LaTeX$ content is rendered with MathJax.</p>
-<img src="http://ladiesweb.us/feynman2.jpg" height="100" width="100" />
+<center><img src="http://ladiesweb.us/feynman2.jpg" height="100" width="100" /></center>
 <p>Images work too. Drag, drop, and scale! (Scaling only works in firefox)</p>
 </div>
 </body>
