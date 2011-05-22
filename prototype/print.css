@@ -2,7 +2,11 @@ html,body {
 	margin: 0;
 	padding: 0;
 	background-color: #eee;
+<<<<<<< HEAD
 	font-family: serif;
+=======
+	font-family: 'Liberation Sans', arial, serif;
+>>>>>>> 3caa79aab0cbb64bcbd3b345c45ccf21d2731011
 }
 
 @page {

@@ -51,45 +51,6 @@ html,body {
 </style>
 
 <script type="text/javascript">
-// FROM http://alexking.org/blog/2003/06/02/inserting-at-the-cursor-using-javascript
-// ======================================
-function insertAtCursor(myField, myValue) {
-
-  //IE support
-
-  if (document.selection) {
-
-    myField.focus();
-
-    sel = document.selection.createRange();
-
-    sel.text = myValue;
-
-  }
-
-  //MOZILLA/NETSCAPE support
-
-  else if (myField.selectionStart || myField.selectionStart == '0') {
-
-    var startPos = myField.selectionStart;
-
-    var endPos = myField.selectionEnd;
-
-    myField.value = myField.value.substring(0, startPos)
-
-                  + myValue
-
-                  + myField.value.substring(endPos, myField.value.length);
-
-  } else {
-
-    myField.value += myValue;
-
-  }
-
-}
-// ======================================
-
 var latexEntered = 0;
 
 if (navigator.userAgent.indexOf("Firefox")!=-1)
@@ -97,6 +58,17 @@ if (navigator.userAgent.indexOf("Firefox")!=-1)
 	
 function runJax() {
 	MathJax.Hub.Queue(["Typeset",MathJax.Hub,"input1"]);
+}
+
+function insertHtmlAtCursor(html) {
+    var range, node;
+    if (window.getSelection && window.getSelection().getRangeAt) {
+        range = window.getSelection().getRangeAt(0);
+        node = range.createContextualFragment(html);
+        range.insertNode(node);
+    } else if (document.selection && document.selection.createRange) {
+        document.selection.createRange().pasteHTML(html);
+    }
 }
 
 function keyinput(e) {
@@ -115,15 +87,21 @@ function keyinput(e) {
 		}
 	}
 	
-	if(e.keyCode == 9)
-		insertAtCursor(document.getElementById('input1'), "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+	if(e.keyCode == 9) {
+		e.preventDefault();
+		//alert('tabbed!');
+		//insertAtCursor(document.getElementById("input1"), "asdf");
+		//alert(document.getSelection());
+		//document.getSelection() = 'asdf';
+		insertHtmlAtCursor("&nbsp;&nbsp;&nbsp;&nbsp;");
+	}
 }
 </script>
 
 </head>
 
 <body>
-<div id='input1' contentEditable=true onkeydown='keyinput(event)'>
+<div id='input1' contentEditable=true onkeydown='keyinput(event)' ontableave="return false">
 
 <h1>A heading... asdf</h1>
 <p>This is just a simple paragraph. Once styled, it would look really 
