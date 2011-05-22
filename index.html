@@ -35,7 +35,7 @@ html,body {
 	margin: 0 auto;
 	display: block;
 
-	padding: 1in;
+	padding: .5in 1in 1in 1in;
 		
 	font-size: 1em;
 	
@@ -53,6 +53,7 @@ html,body {
 
 #input1 h1 {
 	text-align: center;
+	clear: both;
 }
 
 .MathJax {
@@ -61,6 +62,12 @@ html,body {
 	-webkit-user-select: none;
 	-o-user-select: none;
 	user-select: none;
+}
+
+#header {
+	text-align: right;
+	
+	float: right;
 }
 </style>
 
@@ -110,7 +117,11 @@ function toggleLatex() {
 <body onload="contentStore = document.getElementById('input1').innerHTML;">
 <!--<div id="topButtons"><button onclick="toggleLatex()">Toggle Latex</button></div>-->
 <div id='input1' contentEditable=true onkeydown='keyinput(event)'>
-
+<div id="header">
+Preetam Jinka
+<br>
+Anish Tondwalkar
+</div>
 <h1>Open Web Documents</h1>
 <p>	Doesn't this look a lot like Google Docs? That's because this is a Google Docs replacement. Welcome to <em>Open Web Documents</em>. OWD is a 100% open source document editor written in HTML, CSS, and Javascript. This editor is <em>extremely</em> lightweight; just check out the source! If you would like to contribute, visit Github.</p>
 

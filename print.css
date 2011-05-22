@@ -2,27 +2,51 @@ html,body {
 	margin: 0;
 	padding: 0;
 	background-color: #eee;
-<<<<<<< HEAD
 	font-family: serif;
-=======
-	font-family: 'Liberation Sans', arial, serif;
->>>>>>> 3caa79aab0cbb64bcbd3b345c45ccf21d2731011
+}
+
+#input1 {
+	background-color: white;
+
+	margin: 0 auto;
+	display: block;
+
+	padding: .5in 1in 1in 1in;
+		
+	font-size: 1em;
+	
+	width: 6.5in;
+	min-height: 9in;
+	
+	background-image: url('1px.png');
+	background-repeat: repeat-x;
+	background-position: 0 11in;
+}
+
+#input1 p {
+	white-space: pre-wrap;
+}
+
+#input1 h1 {
+	text-align: center;
+	clear: both;
+}
+
+.MathJax {
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+#header {
+	text-align: right;
+	
+	float: right;
 }
 
 @page {
 	margin: 0;
 	padding: 0;
-}
-
-#input1 {
-	background-color: white;
-	
-	margin: 0 auto;
-	display: block;
-
-	padding: 1in;
-}
-
-#input1 h1 {
-	text-align: center;
 }
