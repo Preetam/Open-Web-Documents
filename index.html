@@ -5,9 +5,7 @@
 </script>
 <!--<script type="text/javascript" src="/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>-->
 
-<link rel="stylesheet"
-   type="text/css"
-   media="print" href="print.css" />
+<link rel="stylesheet" type="text/css" media="print" href="print.css" />
 
 <title>Open Web Document Editor.</title>
 
@@ -42,11 +40,11 @@ html,body {
 }
 
 .MathJax {
-   -moz-user-select: -moz-none;
-   -khtml-user-select: none;
-   -webkit-user-select: none;
-   -o-user-select: none;
-   user-select: none;
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+	user-select: none;
 }
 </style>
 
@@ -61,39 +59,17 @@ function runJax() {
 }
 
 function insertHtmlAtCursor(html) {
-    var range, node;
-    if (window.getSelection && window.getSelection().getRangeAt) {
-        range = window.getSelection().getRangeAt(0);
-        node = range.createContextualFragment(html);
-        range.insertNode(node);
-    } else if (document.selection && document.selection.createRange) {
-        document.selection.createRange().pasteHTML(html);
-    }
+	document.execCommand('insertHTML', false, html);
 }
 
 function keyinput(e) {
-	if(e.keyCode == 52 && e.shiftKey) {
-		if(latexEntered < 3) latexEntered++;
-		
-		else {
-			//window.setTimeout(runJax, 500);
-			latexEntered = -1;
-		}
-	}
-	else if(e.keyCode == 13) {
-		if(latexEntered == -1) {
-			window.setTimeout(runJax, 500);
-			latexEntered = 0;
-		}
+	if(e.keyCode == 13) { // ENTER
+		window.setTimeout(runJax, 500);
 	}
 	
-	if(e.keyCode == 9) {
+	if(e.keyCode == 9) { // TAB
 		e.preventDefault();
-		//alert('tabbed!');
-		//insertAtCursor(document.getElementById("input1"), "asdf");
-		//alert(document.getSelection());
-		//document.getSelection() = 'asdf';
-		insertHtmlAtCursor("&nbsp;&nbsp;&nbsp;&nbsp;");
+		insertHtmlAtCursor("	");
 	}
 }
 </script>
@@ -101,7 +77,7 @@ function keyinput(e) {
 </head>
 
 <body>
-<div id='input1' contentEditable=true onkeydown='keyinput(event)' ontableave="return false">
+<div id='input1' contentEditable=true onkeydown='keyinput(event)'>
 
 <h1>A heading... asdf</h1>
 <p>This is just a simple paragraph. Once styled, it would look really 
@@ -121,8 +97,10 @@ ullamcorper risus, nec bibendum est porta quis. Aliquam erat volutpat.
 Quisque porttitor purus eget justo pulvinar non consectetur nisi 
 convallis. Suspendisse potenti.</p>
 
-<p>Do equations work? $$\int_0^1 f(x) dx = \frac11$$</p>
+<p>Do equations work?</p> 
+$$ d{\bf{\vec B}} = \frac{{\mu _0 }}{{4\pi }}\frac{{Id\ell \times {\bf{\hat r}}}}{{r^2 }} $$
 <p>&nbsp;</p>
+
 </div>
 </body>
 
