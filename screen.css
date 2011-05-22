@@ -4,14 +4,14 @@ html,body {
 	background-color: #eee;
 	font-family: serif;
 }
-
+ 
 #input1 {
 	background-color: white;
-
+ 
 	margin: 0 auto;
 	display: block;
-
-	padding: 1in;
+ 
+	padding: .5in 1in 1in 1in;
 		
 	font-size: 1em;
 	
@@ -22,15 +22,16 @@ html,body {
 	background-repeat: repeat-x;
 	background-position: 0 11in;
 }
-
+ 
 #input1 p {
 	white-space: pre-wrap;
 }
-
+ 
 #input1 h1 {
 	text-align: center;
+	clear: both;
 }
-
+ 
 .MathJax {
 	-moz-user-select: -moz-none;
 	-khtml-user-select: none;
@@ -38,8 +39,9 @@ html,body {
 	-o-user-select: none;
 	user-select: none;
 }
-	
+ 
 #header {
 	text-align: right;
+	
 	float: right;
 }
