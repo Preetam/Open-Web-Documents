@@ -2,7 +2,7 @@ html,body {
 	margin: 0;
 	padding: 0;
 	background-color: #bbb;
-	font-family: serif;
+	font-family: "CMUSerifRoman";
 }
  
 #input1 {
@@ -24,12 +24,13 @@ html,body {
 }
  
 #input1 p {
-	white-space: pre-wrap;
+	text-align: justify;
 }
  
 #input1 h1 {
 	text-align: center;
 	clear: both;
+	font-weight: normal;
 }
 
 #leftbar {

@@ -14,6 +14,8 @@
 	background-image: url('1px.png');
 	background-repeat: repeat-x;
 	background-position: 0 11in;
+	
+	font-family: "CMUSerifRoman";
 }
 
 #input1 p {
