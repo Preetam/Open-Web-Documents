@@ -28,6 +28,8 @@ var latexEntered = 0;
 var latexEnabled = 1;
 var contentStore = "";
 
+var inputObj;
+
 if (navigator.userAgent.indexOf("Firefox")!=-1)
 	alert("Whoa! Firefox's printing is kinda meh. Try using Chrome or Opera. Sorry!");
 	
@@ -51,6 +53,8 @@ function keyinput(e) {
 	}
 	
 	contentStore = document.getElementById('input1').innerHTML;
+	
+	localStorage['owd'] = inputObj.innerHTML;
 }
 
 function toggleLatex() {
@@ -77,9 +81,9 @@ function enclose(tag) {
 
 </head>
 
-<body onload="contentStore = document.getElementById('input1').innerHTML;">
+<body onload="contentStore = document.getElementById('input1').innerHTML;inputObj = document.getElementById('input1');if (localStorage.getItem('owd')) inputObj.innerHTML = localStorage.getItem('owd');">
 <div id="leftbar">
-<button onclick="toggleLatex()">Undo Latex</button>
+<button onclick="localStorage.clear()">Clear storage</button>
 <button onclick="enclose('b')">Bold</button>
 <button onclick="enclose('u')">Underline</button>
 <button onclick="enclose('i')">Italics</button>
