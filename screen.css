@@ -24,7 +24,7 @@ html,body {
 }
  
 #input1 p {
-	white-space: pre-wrap;
+	text-align: justify;
 }
  
 #input1 h1 {
