@@ -57,17 +57,6 @@ function keyinput(e) {
 	localStorage['owd'] = inputObj.innerHTML;
 }
 
-function toggleLatex() {
-	if(latexEnabled) {
-		latexEnabled = 0;
-		document.getElementById('input1').innerHTML = contentStore;
-	}
-	else {
-		latexEnabled = 1;
-		window.setTimeout(runJax, 500);
-	}
-}
-
 function enclose(tag) {
 	var sel, range;
 	sel = window.getSelection();
@@ -83,10 +72,11 @@ function enclose(tag) {
 
 <body onload="contentStore = document.getElementById('input1').innerHTML;inputObj = document.getElementById('input1');if (localStorage.getItem('owd')) inputObj.innerHTML = localStorage.getItem('owd');">
 <div id="leftbar">
-<button onclick="localStorage.clear()">Clear storage</button>
+<button onclick="localStorage.clear();window.location=window.location">Clear storage</button>
 <button onclick="enclose('b')">Bold</button>
 <button onclick="enclose('u')">Underline</button>
 <button onclick="enclose('i')">Italics</button>
+<button onclick="enclose('span')">Span</button>
 </div>
 <section id='input1' contentEditable=true onkeydown='keyinput(event)'>
 <div id="header">
