@@ -1,4 +1,4 @@
-var tmp = require('node-require.js-diff_match_patch');
+var tmp = require('lib/dmp-node.js');
 var express = require('express');
 
 var dmp = new tmp.diff_match_patch();
