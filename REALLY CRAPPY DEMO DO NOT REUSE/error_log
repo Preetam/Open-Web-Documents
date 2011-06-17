@@ -1,0 +1,17 @@
+[14-Jun-2011 09:08:52] PHP Parse error:  syntax error, unexpected T_ENCAPSED_AND_WHITESPACE, expecting T_STRING or T_VARIABLE or T_NUM_STRING in /home/preetam/owdocs/public_html/beta/beta.php on line 8
+[14-Jun-2011 09:10:25] PHP Parse error:  syntax error, unexpected T_ENCAPSED_AND_WHITESPACE, expecting T_STRING or T_VARIABLE or T_NUM_STRING in /home/preetam/owdocs/public_html/beta/beta.php on line 11
+[14-Jun-2011 09:11:05] PHP Parse error:  syntax error, unexpected ';', expecting T_CATCH in /home/preetam/owdocs/public_html/beta/beta.php on line 15
+[14-Jun-2011 09:11:32] PHP Parse error:  syntax error, unexpected ')', expecting T_VARIABLE in /home/preetam/owdocs/public_html/beta/beta.php on line 14
+[14-Jun-2011 11:19:35] PHP Parse error:  syntax error, unexpected T_NEW in /home/preetam/owdocs/public_html/beta/submit.php on line 3
+[14-Jun-2011 11:38:11] PHP Parse error:  syntax error, unexpected ')' in /home/preetam/owdocs/public_html/beta/submit.php on line 16
+[14-Jun-2011 12:05:48] PHP Warning:  Invalid argument supplied for foreach() in /home/preetam/owdocs/public_html/beta/submit.php on line 11
+[14-Jun-2011 13:22:59] PHP Parse error:  syntax error, unexpected ';', expecting T_CATCH in /home/preetam/owdocs/public_html/beta/getDoc.php on line 9
+[14-Jun-2011 13:24:23] PHP Fatal error:  Cannot use object of type PDOStatement as array in /home/preetam/owdocs/public_html/beta/getDoc.php on line 7
+[14-Jun-2011 13:24:24] PHP Fatal error:  Cannot use object of type PDOStatement as array in /home/preetam/owdocs/public_html/beta/getDoc.php on line 7
+[15-Jun-2011 09:03:42] PHP Warning:  Invalid argument supplied for foreach() in /home/preetam/owdocs/public_html/beta/latestRev.php on line 13
+[16-Jun-2011 15:06:02] PHP Warning:  Invalid argument supplied for foreach() in /home/preetam/owdocs/public_html/beta/beta.php on line 14
+[16-Jun-2011 17:48:07] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 11938185 bytes) in Unknown on line 0
+[16-Jun-2011 17:48:32] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 8087000 bytes) in Unknown on line 0
+[16-Jun-2011 17:49:17] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 12130278 bytes) in Unknown on line 0
+[16-Jun-2011 23:28:59] PHP Warning:  Invalid argument supplied for foreach() in /home/preetam/owdocs/public_html/beta/submit.php on line 11
+[17-Jun-2011 08:43:42] PHP Warning:  Invalid argument supplied for foreach() in /home/preetam/owdocs/public_html/beta/getDoc.php on line 8
