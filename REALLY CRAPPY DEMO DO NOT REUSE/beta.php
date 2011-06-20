@@ -46,7 +46,8 @@ catch(PDOException $e) {
 <div id=docPatch style="display:none"><? echo $docPatchText ?></div>
 <div id=docID style="display:none"><? echo $_GET['docID'] ?></div>
 <button style="position: absolute; right: 0; top:0" onclick="openHTMLEditor()">Edit HTML</button>
-<textarea id=rawHTML style="display:none"></textarea>
+<textarea id=rawHTML style="display:none; height: 500px; width: 800px"></textarea>
+<button onclick="updateText()">Update HTML</button>
 </body>
 </html>
 

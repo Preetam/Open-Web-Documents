@@ -204,12 +204,13 @@ function openHTMLEditor() {
 	);
 	console.log('asdf');
 
-	document.getElementById('rawHTML').oninput = updateText;
+	//document.getElementById('rawHTML').oninput = updateText;
 }
 
 function updateText() {
-                $('#mainEditableDiv').html(
-                        $('#rawHTML').html().replace('&lt;', '<')
-                );
+                //$('#mainEditableDiv').html(
+                  document.getElementById('mainEditableDiv').innerHTML =   document.getElementById('rawHTML').value.replace('&lt;', '<');
+                //);
+		localDocRev++;
 }
 

@@ -15,3 +15,4 @@
 [16-Jun-2011 17:49:17] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 12130278 bytes) in Unknown on line 0
 [16-Jun-2011 23:28:59] PHP Warning:  Invalid argument supplied for foreach() in /home/preetam/owdocs/public_html/beta/submit.php on line 11
 [17-Jun-2011 08:43:42] PHP Warning:  Invalid argument supplied for foreach() in /home/preetam/owdocs/public_html/beta/getDoc.php on line 8
+[17-Jun-2011 09:16:01] PHP Warning:  Invalid argument supplied for foreach() in /home/preetam/owdocs/public_html/beta/latestRev.php on line 13
